@@ -24,3 +24,10 @@ warnings.filterwarnings('ignore')
 # Set the environment variable TOKENIZERS_PARALLELISM to 'false'
 import os
 os.environ['TOKENIZERS_PARALLELISM'] = 'false'
+
+
+model = AutoModelForCausalLM.from_pretrained("facebook/opt-350m")
+tokenizer = AutoTokenizer.from_pretrained("facebook/opt-350m")
+
+pipe = pipeline("text-generation", model=model,tokenizer=tokenizer)
+print(pipe("This movie was really")[0]["generated_text"])
