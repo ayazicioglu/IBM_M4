@@ -20,3 +20,7 @@ def warn(*args, **kwargs):
 import warnings
 warnings.warn = warn
 warnings.filterwarnings('ignore')
+
+# Set the environment variable TOKENIZERS_PARALLELISM to 'false'
+import os
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'
