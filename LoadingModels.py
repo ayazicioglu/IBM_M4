@@ -27,7 +27,6 @@ os.environ['TOKENIZERS_PARALLELISM'] = 'false'
 
 
 # Loading a pretrained model from Hugging Face and making an inference:
-
 model = AutoModelForCausalLM.from_pretrained("facebook/opt-350m")
 tokenizer = AutoTokenizer.from_pretrained("facebook/opt-350m")
 pipe = pipeline("text-generation", model=model,tokenizer=tokenizer)
