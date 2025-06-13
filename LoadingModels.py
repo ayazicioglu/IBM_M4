@@ -31,3 +31,6 @@ model = AutoModelForCausalLM.from_pretrained("facebook/opt-350m")
 tokenizer = AutoTokenizer.from_pretrained("facebook/opt-350m")
 pipe = pipeline("text-generation", model=model,tokenizer=tokenizer)
 print(pipe("This movie was really")[0]["generated_text"])
+
+# Load the datasets
+dataset = load_dataset("wikitext", "wikitext-2-raw-v1")
